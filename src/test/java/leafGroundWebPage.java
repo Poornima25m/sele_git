@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +18,16 @@ public class leafGroundWebPage {
     public void openLetCode(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://letcode.in");
+        driver.findElement(By.id("testing")).click();
+        browserWait(1000);
         driver.quit();
+    }
+
+    private static void browserWait(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
