@@ -18,7 +18,5 @@ public class leafGroundWebPage {
         WebDriver driver = new ChromeDriver();
         driver.get("https://letcode.in");
         driver.quit();
-
-
     }
 }
