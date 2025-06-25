@@ -1,12 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
-
-import java.sql.SQLOutput;
 
 public class leafGroundWebPage {
 
@@ -38,6 +35,21 @@ public class leafGroundWebPage {
         System.out.println(driver.findElement(By.id("dontwrite")).getAttribute("readonly"));
         browserWait(2000);
         driver.quit();
+    }
+
+    @Test
+    public void navigationCheck(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://letcode.in/button");
+        driver.findElement(By.id("testing")).click();
+        driver.navigate().back();
+        driver.navigate().forward();
+        driver.navigate().refresh();
+        driver.navigate().to("https://www.youtube.com/watch?v=5i7GzxisYrg&list=PLLS0D9-W-1dkcN9ZFFWTcIAawh6kZwahS&index=3");
+        WebDriver.Navigation nav = driver.navigate();
+        nav.back();
+        driver.quit();
+
     }
 
     private static void browserWait(int millis) {
