@@ -49,7 +49,14 @@ public class leafGroundWebPage {
         WebDriver.Navigation nav = driver.navigate();
         nav.back();
         driver.quit();
+    }
 
+    @Test
+    public void usingXpath(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://letcode.in");
+        driver.findElement(By.xpath("//a[@id='testing']")).click();
+        driver.quit();
     }
 
     private static void browserWait(int millis) {
